@@ -11,7 +11,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath:"dist/"
   },
   module: {
     rules: [
@@ -75,7 +74,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.html'),
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: '[name].bundle.css',
     }),
   ],
   devtool: 'inline-source-map',
