@@ -3,12 +3,15 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const DEV_MODE = process.env.NODE_ENV !== 'production'
+
 module.exports = {
-  mode: 'development',
+  mode: DEV_MODE ? 'development' : 'production',
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
-    path: path.resolve(__dirname, '/dist'),
-    filename: '[name].bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
+    publicPath:"dist/"
   },
   module: {
     rules: [
