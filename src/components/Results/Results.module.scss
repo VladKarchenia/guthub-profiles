@@ -35,16 +35,6 @@
         border-radius: 10px;
         background: #f9f9fb;
         color: #333;
-        &_avatar {
-            width: 100px;
-            height: 100px;
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
         &_login {
             max-width: 80%;
             margin: 20px 0 15px;

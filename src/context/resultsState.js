@@ -3,13 +3,14 @@ import { ResultsContext } from "./resultsContext";
 import { resultsReducer } from "./resultsReducer";
 import { SHOW_LOADER, FETCH_USERS } from "./types";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 
 export const ResultsState = ({ children }) => {
     const initialState = {
         users: [],
         loading: false,
     };
-
+    let history = useHistory();
     const [state, dispatch] = useReducer(resultsReducer, initialState);
     const showLoader = () => dispatch({ type: SHOW_LOADER });
     const fetchUsers = async (value) => {
@@ -25,6 +26,11 @@ export const ResultsState = ({ children }) => {
                 };
             });
             localStorage.setItem("cashedUsers", JSON.stringify(payload));
+            localStorage.setItem("lastSearchValue", value);
+            history.push({
+                pathname: "/",
+                search: `?search=${value}`,
+            });
             dispatch({ type: FETCH_USERS, payload });
         } catch (error) {
             throw new Error("Oops, something went wrong");

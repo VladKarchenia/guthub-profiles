@@ -11,6 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "[name].bundle.js",
+        publicPath: "/",
     },
     module: {
         rules: [
@@ -105,5 +106,6 @@ module.exports = {
         contentBase: path.resolve(__dirname, "dist"),
         compress: true,
         port: 9000,
+        historyApiFallback: true,
     },
 };

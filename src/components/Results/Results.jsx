@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react'
 import styles from './Results.module.scss'
-import Link from '@material-ui/core/Link';
-import { styled } from '@material-ui/core/styles';
+import Link from '@material-ui/core/Link'
+import { styled } from '@material-ui/core/styles'
+import Avatar from '@material-ui/core/Avatar'
 
-const MyLink = styled(Link)({
+const StyledLink = styled(Link)({
     width: '100%',
     height: 42,
     background: '#146aec',
@@ -24,31 +25,35 @@ const MyLink = styled(Link)({
     }
 });
 
-export const Results = ({ users }) => (
-    <Fragment>
+const StyledAvatar = styled(Avatar)({
+    width: 100,
+    height: 100
+});
+
+export const Results = ({ users }) => {
+    let lastSearch = localStorage.getItem('lastSearchValue');
+    return (
+        <Fragment>
         <div className={styles.found_number}>
             {users.length > 0
-                ? `We found ${users.length} users for your request`
+                ? `We found ${users.length} users for your request ${lastSearch ? `'${lastSearch}'` : ''}`
                 : 'You can find any GitHub user you want'}
         </div>
         <div className={styles.results}>
             {users.map((user) => {
                 return (
                     <div key={user.id} className={styles.results_item}>
-                        <img
-                            className={styles.results_item_avatar}
-                            src={user.avatar_url}
-                            alt={user.login + ' avatar photo'}
-                        />
+                        <StyledAvatar alt={user.login} src={user.avatar_url} />
                         <div className={styles.results_item_login}>
                             {user.login}
                         </div>
-                        <MyLink href={user.html_url}>
+                        <StyledLink href={user.html_url}>
                             Follow
-                        </MyLink>
+                        </StyledLink>
                     </div>
                 )
             })}
         </div>
     </Fragment>
-)
+    )
+}

@@ -3,13 +3,15 @@ import { Results } from '../Results/Results.jsx'
 import { ResultsContext } from '../../context/resultsContext.js'
 import { Loader } from '../Loader/Loader.jsx'
 import styles from './Search.module.scss'
-import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import TextField from '@material-ui/core/TextField';
-import { styled } from '@material-ui/core/styles';
-import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button'
+import Icon from '@material-ui/core/Icon'
+import TextField from '@material-ui/core/TextField'
+import { styled } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles'
+import { connect } from 'react-redux'
+import { setSearchValue  } from '../../actions/actions.js'
 
-const MyButton = styled(Button)({
+const StyledButton = styled(Button)({
     background: '#e21e35',
     width: '15%',
     height: 54,
@@ -29,7 +31,7 @@ const MyButton = styled(Button)({
     }
 });
 
-const MyInput = withStyles({
+const StyledInput = withStyles({
     root: {
         fontSize: 17,
         color: '#333',
@@ -41,8 +43,8 @@ const MyInput = withStyles({
     }
 })(TextField);
 
-export const Search = () => {
-    const [value, setValue] = useState('')
+const Search = () => {
+    const [searchValue, setSearchValue] = useState('')
     const [cashedUsers, setCashedUsers] = useState('')
     const { loading, users, fetchUsers } = useContext(ResultsContext)
 
@@ -56,20 +58,20 @@ export const Search = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if (value.trim()) {
-            fetchUsers(value)
-            setValue('')
+        if (searchValue.trim()) {
+            fetchUsers(searchValue)
+            setSearchValue('')
         }
     }
 
     return (
         <Fragment>
             <form className={styles.search} onSubmit={handleSubmit} noValidate autoComplete="off">
-                <MyInput id="outlined-search" label="Find a user" type="search" variant="outlined" value={value} onChange={(e) => setValue(e.target.value)} fullWidth/>
-                <MyButton variant="contained" color="secondary" type="submit">
+                <StyledInput id="outlined-search" label="Find a user" type="search" variant="outlined" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} fullWidth/>
+                <StyledButton variant="contained" color="secondary" type="submit">
                     <Icon>search</Icon>
                     Search
-                </MyButton>
+                </StyledButton>
             </form>
             {loading ? (
                 <Loader />
@@ -87,3 +89,12 @@ export const Search = () => {
         </Fragment>
     )
 }
+
+export default connect(
+    (state) => ({
+      searchValue: state.searchValue,
+    }),
+    {
+        setSearchValue,
+    }
+  )(Search)

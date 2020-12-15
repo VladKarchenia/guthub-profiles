@@ -1,14 +1,19 @@
-import React from 'react'
-import { Search } from '../Search/Search.jsx'
-import { ResultsState } from '../../context/resultsState.js'
+import React, { Fragment } from 'react'
+import Home from "../Home/Home.jsx"
+import { About } from "../About/About.jsx"
+import { Navbar } from "../Navbar/Navbar.jsx"
+
+import { Route, Switch } from 'react-router-dom'
 
 function App() {
     return (
-        <ResultsState>
-            <div className="app_container">
-                <Search key="Search" />
-            </div>
-        </ResultsState>
+        <Fragment>
+            <Navbar />
+            <Switch>
+                <Route path={'/'} exact component={Home} />
+                <Route path={'/about'} component={About} />
+            </Switch>
+        </Fragment>
     )
 }
 
