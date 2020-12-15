@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup'
+import Button from '@material-ui/core/Button'
 import { styled } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
@@ -31,7 +31,7 @@ const StyledButtonGroup = styled(ButtonGroup)({
 export const Navbar = () => (
   <div className='header'>
     <StyledTypography variant='h1' align='center'>GitHub Users App</StyledTypography>
-    <StyledButtonGroup disableElevation variant="contained" color="primary" size='large'>
+    <StyledButtonGroup disableElevation variant='contained' color='primary' size='large'>
       <Button>
         <NavLink className='nav-link' to='/' exact>
           Main

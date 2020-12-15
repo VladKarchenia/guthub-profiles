@@ -5,7 +5,7 @@ import { ResultsState } from '../../context/resultsState.js'
 function Home() {
   return (
     <ResultsState>
-      <div className="app_container">
+      <div className='app_container'>
           <Search />
       </div>
     </ResultsState>

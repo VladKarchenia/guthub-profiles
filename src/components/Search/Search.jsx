@@ -66,9 +66,9 @@ const Search = () => {
 
     return (
         <Fragment>
-            <form className={styles.search} onSubmit={handleSubmit} noValidate autoComplete="off">
-                <StyledInput id="outlined-search" label="Find a user" type="search" variant="outlined" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} fullWidth/>
-                <StyledButton variant="contained" color="secondary" type="submit">
+            <form className={styles.search} onSubmit={handleSubmit} noValidate autoComplete='off'>
+                <StyledInput id='outlined-search' label='Find a user' type='search' variant='outlined' value={searchValue} onChange={(e) => setSearchValue(e.target.value)} fullWidth/>
+                <StyledButton variant='contained' color='secondary' type='submit'>
                     <Icon>search</Icon>
                     Search
                 </StyledButton>

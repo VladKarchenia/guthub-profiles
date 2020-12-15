@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import Home from "../Home/Home.jsx"
-import { About } from "../About/About.jsx"
-import { Navbar } from "../Navbar/Navbar.jsx"
+import Home from '../Home/Home.jsx'
+import { About } from '../About/About.jsx'
+import { Navbar } from '../Navbar/Navbar.jsx'
 
 import { Route, Switch } from 'react-router-dom'
 
