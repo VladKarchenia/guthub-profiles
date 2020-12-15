@@ -60,5 +60,5 @@ export const Results = ({ users }) => {
 };
 
 Results.propTypes = {
-    users: PropTypes.node.isRequired,
+    users: PropTypes.array.isRequired,
 };
