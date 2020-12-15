@@ -8,7 +8,8 @@
         "test": "echo \"No test specified\"",
         "start": "webpack serve --mode development --color --progress --watch",
         "build": "webpack --mode production",
-        "deploy": "gh-pages -d dist/"
+        "deploy": "gh-pages -d dist/",
+        "lint": "eslint --fix --ext .js,.jsx ."
     },
     "author": "",
     "license": "ISC",

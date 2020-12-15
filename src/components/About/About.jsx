@@ -1,11 +1,11 @@
-import React from 'react'
-import { styled } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
-import Avatar from '@material-ui/core/Avatar'
-import logo from '../../icons/github.png'
+import React from "react";
+import { styled } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
+import logo from "../../icons/github.png";
 
 const StyledAboutTypography = styled(Typography)({
-  margin: '50px 0 40px'
+  margin: "50px 0 40px"
 });
 
 const StyledAboutIcon = styled(Avatar)({
@@ -20,4 +20,4 @@ export const About = () => (
     </StyledAboutTypography>
     <StyledAboutIcon alt='github icon' src={logo} />
   </div>
-)
+);

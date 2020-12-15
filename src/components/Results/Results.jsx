@@ -1,27 +1,28 @@
-import React, { Fragment } from 'react'
-import styles from './Results.module.scss'
-import Link from '@material-ui/core/Link'
-import { styled } from '@material-ui/core/styles'
-import Avatar from '@material-ui/core/Avatar'
+import React, { Fragment } from "react";
+import styles from "./Results.module.scss";
+import Link from "@material-ui/core/Link";
+import { styled } from "@material-ui/core/styles";
+import Avatar from "@material-ui/core/Avatar";
+import PropTypes from "prop-types";
 
 const StyledLink = styled(Link)({
-    width: '100%',
+    width: "100%",
     height: 42,
-    background: '#146aec',
-    borderRadius: '0 0 10px 10px',
-    color: 'white',
+    background: "#146aec",
+    borderRadius: "0 0 10px 10px",
+    color: "white",
     fontSize: 15,
     fontWeight: 600,
-    lineHeight: '42px',
-    boxShadow: '0 1px 1px rgba(20, 106, 236, 0.15)',
-    textDecoration: 'none',
-    border: 'none',
-    outline: 'none',
-    cursor: 'pointer',
-    textAlign: 'center',
-    '&:hover, &:active': {
-        background: '#0047b1',
-        textDecoration: 'none'
+    lineHeight: "42px",
+    boxShadow: "0 1px 1px rgba(20, 106, 236, 0.15)",
+    textDecoration: "none",
+    border: "none",
+    outline: "none",
+    cursor: "pointer",
+    textAlign: "center",
+    "&:hover, &:active": {
+        background: "#0047b1",
+        textDecoration: "none"
     }
 });
 
@@ -31,13 +32,13 @@ const StyledAvatar = styled(Avatar)({
 });
 
 export const Results = ({ users }) => {
-    let lastSearch = localStorage.getItem('lastSearchValue');
+    let lastSearch = localStorage.getItem("lastSearchValue");
     return (
         <Fragment>
         <div className={styles.found_number}>
             {users.length > 0
-                ? `We found ${users.length} users for your request ${lastSearch ? `'${lastSearch}'` : ''}`
-                : 'You can find any GitHub user you want'}
+                ? `We found ${users.length} users for your request ${lastSearch ? `'${lastSearch}'` : ""}`
+                : "You can find any GitHub user you want"}
         </div>
         <div className={styles.results}>
             {users.map((user) => {
@@ -51,9 +52,13 @@ export const Results = ({ users }) => {
                             Follow
                         </StyledLink>
                     </div>
-                )
+                );
             })}
         </div>
     </Fragment>
-    )
-}
+    );
+};
+
+Results.propTypes = {
+    users: PropTypes.node.isRequired,
+};

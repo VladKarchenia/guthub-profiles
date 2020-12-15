@@ -1,6 +1,6 @@
-import React from 'react'
-import Search from '../Search/Search.jsx'
-import { ResultsState } from '../../context/resultsState.js'
+import React from "react";
+import Search from "../Search/Search.jsx";
+import { ResultsState } from "../../context/resultsState.js";
 
 function Home() {
   return (
@@ -9,8 +9,8 @@ function Home() {
           <Search />
       </div>
     </ResultsState>
-  )
+  );
 }
 
-export default Home
+export default Home;
 

@@ -1,30 +1,30 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import ButtonGroup from '@material-ui/core/ButtonGroup'
-import Button from '@material-ui/core/Button'
-import { styled } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Button from "@material-ui/core/Button";
+import { styled } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 
 const StyledTypography = styled(Typography)({
-  '&.MuiTypography-h1': {
+  "&.MuiTypography-h1": {
       fontSize: 32,
-      margin: '20px 0'
+      margin: "20px 0"
   }
 });
 
 const StyledButtonGroup = styled(ButtonGroup)({
-  display: 'flex',
-  justifyContent: 'center',
-  '& button': {
+  display: "flex",
+  justifyContent: "center",
+  "& button": {
     width: 100,
     padding: 0
   },
-  '& .nav-link': {
-    width: '100%',
+  "& .nav-link": {
+    width: "100%",
     height: 42,
-    lineHeight: '42px',
-    color: 'white',
-    textDecoration: 'none'
+    lineHeight: "42px",
+    color: "white",
+    textDecoration: "none"
   }
 });
 
@@ -44,4 +44,4 @@ export const Navbar = () => (
       </Button>
     </StyledButtonGroup>
   </div>
-)
+);
