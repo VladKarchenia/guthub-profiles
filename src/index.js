@@ -12,7 +12,11 @@ const rootContainer = document.getElementById("root");
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter basename="/guthub-profiles">
+        <BrowserRouter
+            basename={
+                process.env.NODE_ENV !== "production" ? "/" : "/guthub-profiles"
+            }
+        >
             <App />
         </BrowserRouter>
     </Provider>,
