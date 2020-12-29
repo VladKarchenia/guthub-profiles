@@ -1,14 +1,14 @@
 import React from "react";
-import Search from "../Search/Search.jsx";
-import { ResultsState } from "../../context/resultsState.js";
+import SearchForm from "../SearchForm/SearchForm.jsx";
+import { SearchResultsState } from "../../context/searchResultsState.js";
 
 function Home() {
   return (
-    <ResultsState>
+    <SearchResultsState>
       <div className='app_container'>
-          <Search />
+        <SearchForm />
       </div>
-    </ResultsState>
+    </SearchResultsState>
   );
 }
 

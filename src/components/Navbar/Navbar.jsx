@@ -7,8 +7,8 @@ import Typography from "@material-ui/core/Typography";
 
 const StyledTypography = styled(Typography)({
   "&.MuiTypography-h1": {
-      fontSize: 32,
-      margin: "20px 0"
+    fontSize: 32,
+    margin: "20px 0"
   }
 });
 
