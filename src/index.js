@@ -32,5 +32,5 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </Provider>,
-  rootContainer
+  rootContainer || document.createElement("div")
 );

@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
     amd: true,
     node: true,
+    jest: true,
   },
   extends: ["eslint:recommended", "plugin:react/recommended", "prettier"],
   parserOptions: {
@@ -13,7 +14,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react"],
+  plugins: ["react", "jest"],
   rules: {
     semi: ["error", "always"],
     quotes: ["error", "double"],

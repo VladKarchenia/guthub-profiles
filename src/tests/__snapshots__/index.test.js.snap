@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search form component matches the snapshot 1`] = `
+Array [
+  <div
+    className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-3 MuiFormControl-fullWidth"
+  >
+    <label
+      className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+      data-shrink={false}
+      htmlFor="outlined-search"
+      id="outlined-search-label"
+    >
+      Find a user
+    </label>
+    <div
+      className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+      onClick={[Function]}
+    >
+      <input
+        aria-invalid={false}
+        autoComplete="off"
+        autoFocus={false}
+        className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputTypeSearch"
+        disabled={false}
+        id="outlined-search"
+        onAnimationStart={[Function]}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="search"
+        value=""
+      />
+      <fieldset
+        aria-hidden={true}
+        className="PrivateNotchedOutline-root-4 MuiOutlinedInput-notchedOutline"
+      >
+        <legend
+          className="PrivateNotchedOutline-legendLabelled-6"
+        >
+          <span>
+            Find a user
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>,
+  <div
+    className="found_number"
+  >
+    You can find any GitHub user you want
+  </div>,
+  <div
+    className="results"
+  />,
+]
+`;
